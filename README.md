@@ -21,4 +21,4 @@ I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 
 1 - firmware <first step to take with pico w>.
 2 - Idé or worth to make it in software.
-3 - main.py <start from main.py read from 3-startup ?>
+3 - main.py <start from main.py read from 4-startup ?>
