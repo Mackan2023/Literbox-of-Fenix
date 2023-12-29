@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #info {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Device Information</h1>
+  <div id="info">
+    <p>Free RAM: <span id="freeRam"></span> bytes</p>
+    <p>CPU Load: <span id="cpuLoad"></span>%</p>
+    <p>Connected Devices: <span id="connectedDevices"></span></p>
+  </div>
+
+  <button onclick="refreshInfo()">Refresh Information</button>
+
+  <script>
+    function refreshInfo() {
+      // Hämta enhetens information med JavaScript och uppdatera HTML
+      // (Denna del av koden skulle behöva anpassas beroende på hur du vill hämta informationen)
+
+      // Exempel:
+      var freeRam = getFreeRAM(); // Funktion som hämtar ledig RAM
+      var cpuLoad = getCPULoad(); // Funktion som hämtar CPU-belastning
+      var connectedDevices = getConnectedDevices(); // Funktion som hämtar anslutna enheter
+
+      // Uppdatera HTML
+      document.getElementById('freeRam').textContent = freeRam;
+      document.getElementById('cpuLoad').textContent = cpuLoad;
+      document.getElementById('connectedDevices').textContent = connectedDevices;
+    }
+
+    // Dessa funktioner är exempel och måste anpassas för din specifika situation
+    function getFreeRAM() {
+      // Implementera kod för att hämta ledig RAM
+      // Exempel: returnera Math.floor(Math.random() * 100000); // Slumpmässig siffra för illustration
+    }
+
+    function getCPULoad() {
+      // Implementera kod för att hämta CPU-belastning
+      // Exempel: returnera Math.floor(Math.random() * 100); // Slumpmässig siffra för illustration
+    }
+
+    function getConnectedDevices() {
+      // Implementera kod för att hämta anslutna enheter
+      // Exempel: returnera Math.floor(Math.random() * 10); // Slumpmässig siffra för illustration
+    }
+
+    // Uppdatera informationen vid sidans laddning
+    window.onload = refreshInfo;
+  </script>
+</body>
+</html>

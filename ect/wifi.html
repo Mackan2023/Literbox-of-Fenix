@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Configuration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Device Configuration</h1>
+  <form id="wifiForm">
+    <label for="ssid">WiFi SSID:</label>
+    <input type="text" id="ssid" name="ssid" required><br>
+
+    <label for="password">WiFi Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Connect to WiFi</button>
+  </form>
+
+  <script>
+    document.getElementById('wifiForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Hämta värden från formuläret
+      var ssid = document.getElementById('ssid').value;
+      var password = document.getElementById('password').value;
+
+      // Skicka värden till enheten (detta kan implementeras med JavaScript AJAX eller liknande)
+
+      // Visa bekräftelsemeddelande eller vidta ytterligare åtgärder här
+      alert('Device configured successfully!');
+    });
+  </script>
+</body>
+</html>
