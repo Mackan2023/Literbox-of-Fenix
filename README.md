@@ -22,3 +22,5 @@ I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 1 - firmware <first step to take with stm32f1>.
 2 - Idé or worth to make it in software.
 3 - main.py <start from main.py read from 4-startup ?>
+
+https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html
