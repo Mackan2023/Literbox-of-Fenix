@@ -9,9 +9,9 @@ I have no idea what I'm doing here or what is what but I have an idea that I rea
 it is a self-cleaning litter box for cats,
 
 2, stepper motor -> a driver
-1, magnetic hall effect sensor or optical reader = or maybe both ?
+1, optical reader
 2, HX711 weight sensor
-1, raspberry pico w (interface should be good to get indicate/error)
+1, Blue Pill, STM32F103C8T6
 
 it should be fun to do something I'm not good at :)
 
@@ -19,6 +19,6 @@ about me:
 I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 
 
-1 - firmware <first step to take with pico w>.
+1 - firmware <first step to take with stm32f1>.
 2 - Idé or worth to make it in software.
 3 - main.py <start from main.py read from 4-startup ?>
