@@ -1,0 +1,11 @@
+SoftwareSerial
+U8glib
+knolleary/PubSubClient@^2.8
+paulstoffregen/OneWire
+OpticalReaderLibrary
+Stepper
+Wire
+HX711
+SPI
+ESP8266WiFi
+AnotherLibrary
