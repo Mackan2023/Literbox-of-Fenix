@@ -1,73 +1,45 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <ESPAsyncWebServer.h>
-#include <ESP8266mDNS.h>
-#include <WiFiUdp.h>
-#include <ArduinoOTA>
-#include <FS.h>
+#include <string.h>
+#include <stdio.h>
+#include "sha256.h" // Exempel på en SHA-256-bibliotek
 
-const char* ssid = "router namn";
+const char* ssid = "admin";
 const char* password = "lösenordet";
-const int ledPin = 2; // Anslut din LED till pin 2
 
 AsyncWebServer server(80);
 
-// Beräkna hashen från den nedladdade filen
-void calculateHash(const uint8_t* fileContent, size_t fileSize, char* result) {
-    // Använd SHA-256 eller annan hashfunktion här
-    // Exempel: sha256(fileContent, fileSize, result);
-    // 'result' kommer att innehålla hashen som en sträng
+// Ta emot fil från HTML-filen
+void handleUpload(AsyncWebServerRequest* request, String filename, size_t index, uint8_t* data, size_t len, bool final) {
+    // Skriv filen till SPIFFS eller annat lagringsutrymme
+    // Implementera din kod här
 }
 
-// Ladda ner .bin-filen från webbservern
-// Beräkna hashen
-// Skicka både .bin-filen och hashen till STM32 via UART
-// Implementera kod för att installera .bin-filen på STM32
+// Ta emot hash och fil från HTML-filen
+void handleUpdate(AsyncWebServerRequest* request) {
+    // Ta emot hash och fil från HTML-filen
+    // Skicka hash och fil till STM32
+    // Implementera din kod här
+}
 
 void setup() {
     Serial.begin(115200);
-    pinMode(ledPin, OUTPUT); // Ange pin 2 som en utgång
-
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
-        digitalWrite(ledPin, HIGH); // Tänd LED
-        delay(250); // Vänta i 250 ms
-        digitalWrite(ledPin, LOW); // Släck LED
-        delay(250); // Vänta i 250 ms
+        delay(1000);
         Serial.println("Ansluter till WiFi...");
     }
-    Serial.println("Ansluten till WiFi");
+    Serial.println("Ansluten till WiFi!");
 
-    // Aktivera OTA
-    ArduinoOTA.begin();
-    SPIFFS.begin();
-
-    // Läs innehållet från index.html-filen
-    File file = SPIFFS.open("/index.html", "r");
-    if (file) {
-        String htmlPage = file.readString();
-        file.close();
-
-        // Skapa en ny hanterare för /index som skickar innehållet från index.html
-        server.on("/index", HTTP_GET, {
-            request->send(200, "text/html", htmlPage);
-        });
-    } else {
-        Serial.println("Kunde inte öppna index.html-filen");
-    }
-
-    // Hantera uppdatering av bin-fil här (du behöver implementera detta)
-    server.on("/update", HTTP_POST, {
-        // Här kan du hantera uppdateringen av bin-filen
-        // Till exempel, ladda upp den nya bin-filen och ersätt den befintliga
+    server.on("/upload", HTTP_POST, [](AsyncWebServerRequest* request) {
         request->send(200);
-    });
-
+    }, handleUpload);
+    
+    server.on("/update", HTTP_POST, handleUpdate);
     server.begin();
 }
 
 void loop() {
-    // Hantera OTA-uppdateringar
-    ArduinoOTA.handle();
     // Din övriga kod här
 }
