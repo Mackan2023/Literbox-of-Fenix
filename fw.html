@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP-01S STM32 HTML OTA Update</title>
+
+    <!-- CSS för layout och utseende -->
+    <style>
+        /* Länkar */
+        p a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        /* Uppdateringsstatus */
+        #update-progress {
+            border: 5px solid auto #ccc;
+            padding: 5px auto;
+            width: 25%;
+            display: flex;
+            margin: 0 auto; /* Centrera horisontellt */
+        }
+
+        #progress-bar {
+            flex-grow: 1;
+            height: 20px;
+            background-color: #ddd;
+            position: relative;
+            width: 100px; /* Justera bredden här */
+        }
+
+        #progress-status {
+            position: relative;
+            top: 50%;
+            left: 50%; /* Centrera horisontellt */
+            transform: translate(-50%, -50%);
+            height: 100%; /* Justera centreringspositionen */
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            line-height: 21px;
+            width: 25px; /* Justera bredden här */
+        }
+
+        /* Informationsruta */
+        #info-box {
+            border: 5px solid #ccc;
+            padding: 10px;
+            max-height: 200px; /* Maximal höjd för historiken */
+            overflow-y: auto; /* Rulla om innehållet blir för långt */
+            width: 80%; /* Bredden på informationsrutan */
+            font-family: monospace; /* Teckensnitt */
+            margin: 0 auto; /* Centrera horisontellt */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <p style="text-align: center;">
+        <a href="index.html">Start</a> - 
+        <a href="settings.html">Settings</a> - 
+        <a href="fw.html">Update</a>
+    </p>
+
+    <!-- Uppdateringsstatus -->
+    <div id="update-progress">
+        <div id="progress-bar">
+            <div id="progress-status">0%</div>
+        </div>
+    </div>
+
+    <!-- ESP8266 IP-adress -->
+    <h1 style="text-align: center;">ESP8266 IP-adress:</h1>
+    <p id="ip-address" style="text-align: center;"></p>
+
+    <!-- Formulär för filuppladdning -->
+    <form action="/upload" method="post" enctype="multipart/form-data" style="text-align: center;">
+        <input type="file" id="myFile" name="filename"> <input type="submit" value="Ladda upp">
+    </form>
+
+    <!-- Knappar för uppdatering -->
+    <p style="text-align: center;">
+        <button onclick="updateFirmware()">Uppdatera ESP</button>
+        <button onclick="updateSTM32()">Uppdatera STM32</button>
+    </p>
+
+    <!-- Uppdatera index-knapp -->
+    <p style="text-align: center;">
+        <input type="file" id="html-file">
+        <button onclick="updateIndex()">Uppdatera index</button>
+    </p>
+
+    <!-- Informationsruta -->
+    <div id="info-box"></div>
+
+    <!-- JavaScript för funktionalitet -->
+    <script>
+        // Funktion för att visa information i informationsrutan
+        function showInfo(message) {
+            const infoBox = document.getElementById('info-box');
+            infoBox.innerHTML += message + "<br>"; // Lägg till meddelande till befintliga meddelanden och lägg till en radbrytning
+            const lines = infoBox.innerHTML.split('<br>'); // Dela meddelandena till rader
+            if (lines.length > 20) { // Radera historiken efter 20 rader
+                lines.shift();
+                infoBox.innerHTML = lines.join('<br>');
+            }
+        }
+
+        // Funktion för att uppdatera procentstatus
+        function updateProgressStatus(percentage) {
+            const progressStatus = document.getElementById('progress-status');
+            progressStatus.textContent = `${percentage}%`;
+        }
+
+        // Funktion för att uppdatera firmware för ESP
+        function updateFirmware() {
+            showInfo(`Uppdaterar ESP med ${increasePercentage}% Klar...`); // Visa meddelande i rutan
+            updateProgressStatus(1); // Uppdatera procentstatus
+        }
+
+       
