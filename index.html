@@ -1,160 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP8266 STM32 OTA Update</title>
-    <style>
-        /* Stil för informationsrutan */
-        #info-box {
-            border: 5px solid #ccc;
-            padding: 10px;
-            max-height: 700px; /* Maximal höjd för historiken */
-            overflow-y: auto; /* Rulla om innehållet blir för långt */
-            width: 700px; /* Bredden på informationsrutan */
-            font-family: monospace; /* Använd ett fastställt teckensnitt för jämn teckenbredd */
-            margin: 0 auto; /* Centrera horisontellt */
-        }
-
-        /* Stil för uppdateringsfältet */
-        #update-progress {
-            border: 5px solid #ccc;
-            padding: 5px;
-            width: 25%;
-            display: flex;
-            margin: 0 auto; /* Centrera horisontellt */
-        }
-
-        /* Stil för uppdateringsbalken */
-        #progress-bar {
-            flex-grow: 1;
-            height: 20px;
-            background-color: #ddd;
-            position: relative;
-            width: 100px; /* Justera bredden här */
-        }
-
-        /* Stil för uppdateringsstatus */
-        #progress-status {
-            position: absolute;
-            top: 0;
-            left: 50%; /* Centrera horisontellt */
-            transform: translateX(-50%); /* Justera centreringspositionen */
-            height: 100%;
-            background-color: #4caf50;
-            color: #fff;
-            text-align: center;
-            line-height: 20px;
-            width: 20px; /* Justera bredden här */
-        }
-    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<p style="text-align: center;"><a href="index.html">Start&nbsp;</a> - <a href="settings.html">Settings</a> - <a href="fw.html">Update&nbsp;</a></p>
+<hr style="text-align: center;">
+<title>Trumvikt</title>
+<style>
+    /* Lite CSS för att styla layouten */
+    #container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    #weightDisplay {
+        font-size: 24px;
+    }
+</style>
 </head>
 <body>
-    <h1 style="text-align: center;">ESP8266 IP-adress:</h1>
-	<p style="text-align: center;">
-	
-	
-	
-<h1>Filuppladdning och hashverifiering</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" id="myFile" name="filename">
-        <input type="submit" value="Ladda upp">
-    </form>
-    <p id="verificationStatus"></p>
-	
-	
-	
-    <input type="file" id="bin-file">
-    <button onclick="updateFirmware()">Uppdatera ESP</button>
-    <button onclick="updateSTM32()">Uppdatera STM32</button>
-	<p style="text-align: center;">
-	<input type="file" id="html-file">
-	<button onclick="updateIndex()">Uppdatera index</button>
+<div id="container">
+    <h1>Trumvikt</h1>
+    <p>Vikt: <span id="weightDisplay">0</span> kg</p>
+    <input type="range" min="0" max="100" value="0" id="weightAdjuster">
+    <p><button onclick="resetWeight()">Nollställ vikt</button></p>
+</div>
 
-    <!-- Informationruta -->
-    <div id="info-box"></div>
+<script>
+    // Simulerar funktioner för att kommunicera med sensorer och motorer
+    function readWeightFromSensor() {
+        // Här skulle du ha kod för att läsa vikten från sensorn (t.ex. HX711)
+        // Tillfälligt används en slumpmässig vikt
+        return Math.random() * 100;
+    }
 
-    <!-- Uppdateringsfält -->
-    <div id="update-progress">
-        <div id="progress-bar">
-            <div id="progress-status">0%</div>
-        </div>
-    </div>
+    function adjustMotor(speed) {
+        // Här skulle du ha kod för att justera motorhastigheten för att rotera trumman
+        console.log("Justerar motorhastighet: " + speed);
+    }
 
-    <script>
-        // Hämta IP-adressen från ESP8266
-        fetch('/get-ip')
-            .then(response => response.text())
-            .then(ip => document.getElementById('ip-address').textContent = ip);
+    // Uppdatera vikten på sidan
+    function updateWeight() {
+        var weight = readWeightFromSensor();
+        document.getElementById("weightDisplay").textContent = weight.toFixed(2);
+    }
 
-        // Variabel för ökande procentandel
-        let increasePercentage = 1; // Exempel: 10%
+    // Justera motorhastighet när knappen roteras
+    document.getElementById("weightAdjuster").addEventListener("input", function() {
+        var speed = this.value;
+        adjustMotor(speed);
+    });
 
-        // Funktion för att visa information i rutan
-        function showInfo(message) {
-            const infoBox = document.getElementById('info-box');
-            infoBox.innerHTML = message;
+    // Nollställ vikten
+    function resetWeight() {
+        // Här skulle du kunna ha kod för att nollställa vikten på trumman
+        console.log("Vikt nollställd");
+        updateWeight(); // Uppdatera vikten på sidan till 0 efter nollställning
+    }
 
-            // Radera historiken efter 20 rader
-            const lines = infoBox.innerHTML.split('<br>');
-            if (lines.length > 20) {
-                lines.shift();
-                infoBox.innerHTML = lines.join('<br>');
-            }
-        }
-
-        // Funktion för att uppdatera procentstatus
-        function updateProgressStatus(percentage) {
-            const progressStatus = document.getElementById('progress-status');
-            progressStatus.textContent = `${percentage}%`;
-        }
-
-        // Funktion för att starta uppdatering för ESP
-        function updateFirmware() {
-            // Hämta vald fil för ESP
-            // Skicka filen till ESP8266 för uppdatering
-            showInfo(`Uppdaterar ESP med ${increasePercentage}% Klar...`); // Visa meddelande i rutan
-            updateProgressStatus(1); // Uppdatera procentstatus
-        }
-
-        // Funktion för att starta uppdatering för STM32
-        function updateSTM32() {
-            // Hämta vald fil för STM32
-            // Skicka filen till STM32 via ESP8266
-            showInfo(`Uppdaterar STM32 med ${increasePercentage}% Klar...`); // Visa meddelande i rutan
-            updateProgressStatus(1); // Uppdatera procentstatus
-        }
-
-        // Funktion för att uppdatera index.html
-        function updateIndex() {
-            // Implementera logik för att uppdatera index.html här
-            showInfo(`Uppdaterar index.html med ${increasePercentage}% Klar...`); // Visa meddelande i rutan
-            updateProgressStatus(1); // Uppdatera procentstatus
-        }
-document.querySelector('form').addEventListener('submit', async (event) => {
-            event.preventDefault(); // Förhindra standardformulärhantering
-
-            const fileInput = document.getElementById('myFile');
-            const file = fileInput.files[0];
-
-            // Beräkna hashen från den uppladdade filen
-            const hash = await calculateHash(file);
-
-            // Jämför med den sparade hashen (som du får från ESP8266)
-            if (hash === 'din-sparade-hash-här') {
-                document.getElementById('verificationStatus').textContent = 'Filen är verifierad!';
-            } else {
-                document.getElementById('verificationStatus').textContent = 'Felaktig fil – hashen matchar inte.';
-            }
-        });
-
-        async function calculateHash(file) {
-            // Använd en hashfunktion (till exempel SHA-256) här
-            // Exempel: return sha256(file);
-            // 'result' kommer att innehålla hashen som en sträng
-            // Implementera din hashberäkningslogik här
-        }
-    </script>
+    // Uppdatera vikten första gången sidan laddas
+    updateWeight();
+</script>
 </body>
 </html>
