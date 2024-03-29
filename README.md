@@ -5,11 +5,9 @@
     <div>
       <span style="color:#dae3e3;">Hey, I have an idea, if you like to "bug" with, well, go head.</span>
       <span style="color:#f39c12;">I'm totally new to programming/electrical/ect, I'm no one.</span>
-    <div>
-      <span style="color:#dae3e3;">I will need a lot of help if  you are interested in helping me? you are welcome to help.</span></div>
-    <div>
+      <span style="color:#dae3e3;">I will need a lot of help if  you are interested in helping me? you are welcome to help.</span>
       <span style="color:#dae3e3;">I have no idea what I'm doing here or what is what but I have an idea that I really like to do.</span></div>
-    <div>&nbsp;</div></div>
+    <div>&nbsp;</div>
     <div>
       <span style="color:#dae3e3;">it is a self-cleaning litter box for cats, </span>
       <a target="_blank" rel="noopener noreferrer" href="https://github.com/Mackan2023/Literbox-of-Fenix/doc/">
@@ -21,21 +19,13 @@
       <span style="color:#dae3e3;">about me: I'm not an electrician/programmer/etc/ sometimes it's hard to understand.</span></div>
     <div><br>&nbsp;</div>
     <div>
-      <span style="color:#7fcbcd;">2</span>
-      <span style="color:#dae3e3;">, stepper </span>
-      <span style="color:#f39c12;">motor</span>
-      <span style="color:#dae3e3;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(mor info coming)</span></div>
+      <span style="color:#7fcbcd;">2, stepper motor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(mor info coming)</span></div>
     <div>
-      <span style="color:#7fcbcd;">1</span>
-      <span style="color:#dae3e3;">, stepper motor driver &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+      <span style="color:#7fcbcd;">1, stepper motor driver &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
       <a target="_blank" rel="noopener noreferrer" href="https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf" download="file">
         <span style="color:#dae3e3;">A4988</span></a></div>
     <div>
-      <span style="color:#7fcbcd;">1</span>
-      <span style="color:#dae3e3;">, (</span>
-      <span style="color:#7fcbcd;">2</span>
-      <span style="color:#dae3e3;">), optical </span>
-      <span style="color:#f39c12;">reader</span>
+      <span style="color:#7fcbcd;">1, (2), optical reader</span>
       <span style="color:#dae3e3;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (more info coming.)</span></div>
     <div>
       <span style="color:#7fcbcd;">1</span>
@@ -48,10 +38,7 @@
       <a target="_blank" rel="noopener noreferrer" href="https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html">
       <span style="color:#dae3e3;">STM32F103C8T6</span></a></div>
     <div>
-      <span style="color:#7fcbcd;">1</span>
-      <span style="color:#dae3e3;">, Esp-0</span>
-      <span style="color:#7fcbcd;">1</span>
-      <span style="color:#dae3e3;">s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+      <span style="color:#7fcbcd;">1, Esp-01s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
       <a target="_blank" rel="noopener noreferrer" href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf" download="file">
       <span style="color:#dae3e3;">PDF</span></a></div>
     <div>
