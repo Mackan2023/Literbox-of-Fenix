@@ -29,22 +29,21 @@
     <li>1, ESP-01s 
 <a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">Datasheet</a></li>
 </ul>
-<hr>
 <ol>
-    <li>Firmware &lt;first step to take with STM32F1&gt;.</li>
-    <li>Is it worth considering making it in software?</li>
-    <li>Main &lt;start from main read from 4-startup ?&gt;</li>
+    <li>firmware ? <first step to take with stm32f1>..</li>
+    <li>Idé or worth to make it in software.?</li>
+    <li>main <start from main read from 4-startup ?></li>
 </ol>
-
+<hr>
 <p>/////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
     First, check the first command line by entering<br>
     <code>"sudo nano /boot/cmdline.txt"</code> then remove <code>console=serial0,115200</code>.<br>
     Don't forget to <code>reboot</code>after all tools are installed.<br>
-
+<hr>
 <p>/////////////////////////STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
     If you're flashing STM32F103C8T6, start here.</p>
     
-
+<hr>
 <p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
     If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:</p>
 <ul>
