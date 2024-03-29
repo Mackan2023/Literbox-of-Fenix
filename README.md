@@ -68,3 +68,4 @@ Erase firmware: <code>esptool.py --port /dev/ttyUSB0 erase_flash</code>
 
 </body>
 </html>
+c Mackan2024
