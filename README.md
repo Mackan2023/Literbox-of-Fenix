@@ -88,8 +88,6 @@
       <span style="color:#7fcbcd;">"install tool"</span>
       <span style="color:#dae3e3;">sudo pip install esptool</span><br>
       <span style="color:#7fcbcd;">"Burn bin file to usb0 if its usb0 (dev/usb* command)"</span>
-      <span style="color:#dae3e3;"></span>
       <span style="color:#f39c12;">esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin</span><br>
-      <span style="color:#7fcbcd;">"erase firmware"</span>
-      <span style="color:#dae3e3;"></span>
+      <span style="color:#ffffff;">"erase firmware"</span>
       <span style="color:#f39c12;">esptool.py --port /dev/ttyUSB0 erase_flash</span></div>
