@@ -39,19 +39,13 @@
     If you're flashing STM32F103C8T6, start here.</p>
 
 <p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps.</p>
+    If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:</p>
 
-<p>Highlight should be removed from this text:<br>
-Check if you have connected STM to the right port on Raspberry Pi by using<br>
-"burn in file over RX&TX"<br>
-"erase firmware"<br>
-Burn bin file to usb0 if it's usb0 (dev/usb* command)<br>
-Erase firmware</p>
-
-<p>And the text is incorrect:<br>
-Burn bin file to usb0 if it's usb0 (dev/usb* command)<br>
-It should be:<br>
-Burn bin file to usb0 if it's usb0 (dev/ttyUSB* command)</p>
+<ul>
+    Install tool: <li><code>sudo pip install esptool</code></li>
+    Burn bin file to usb0 if it's usb0 (dev/ttyUSB* command): <li><code>esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin</code></li>
+    Erase firmware: <li><code>esptool.py --port /dev/ttyUSB0 erase_flash</code></li>
+</ul>
 
 </body>
 </html>
