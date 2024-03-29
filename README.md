@@ -1,3 +1,4 @@
+<html>
 # literbox Fenix
 
 Hey, I have an idea, if you like to "bug" with, well, go head. I'm totally new to programming/electrical/ect, I'm no one. 
@@ -58,3 +59,4 @@ if use ESP-01s (ESP8266EX) on raspberrypi os with programer
 "Burn bin file to usb0 if its usb0 (dev/usb* command)" esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin
 
 "erase firmware" esptool.py --port /dev/ttyUSB0 erase_flash
+</html>
