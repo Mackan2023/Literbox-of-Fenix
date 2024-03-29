@@ -43,11 +43,16 @@
 <p>/////////////////////////STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
     If you're flashing STM32F103C8T6, start here.</p><br>
     install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)
-    <code>cd stm/u<br>
-    make<br>
-    sudo make install</code><br>
-    <code>cd ../</code><br>
-    **********************************
+<code>
+cd stm/u<br>
+make<br>
+sudo make install</code><br>
+cd ../</code><br>
+    this is not needed but use unsafe working bootloader go a head<br>
+<code>git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot</code><br>
+    check if u have connected stm to right on pi by <code>/dev/serial0</code> command, 0 if its connected there<br>
+    burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0</code><br>
+    erase firmware <code>stm32flash -o /dev/serial0</code><br>
     
 <hr>
 <p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
