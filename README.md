@@ -6,32 +6,22 @@ I have no idea what I'm doing here or what is what but I have an idea that I rea
 
 it is a self-cleaning litter box for cats, https://github.com/Mackan2023/Literbox-of-Fenix/doc/
 
-2, stepper motor -> one driver (mor info coming)
-https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf
-
-1, optical reader              (more info coming.
-
-1(2), HX711 weight sensor      https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf
-
-1, Blue Pill, STM32F103C8T6    https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html
-
-1, Esp-01s                     https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf
-
-
 it should be fun to do something I'm not good at :)
 about me: I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 
-
+2, stepper motor            (mor info coming)
+1, stepper motor driver     https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf
+1, (2), optical reader       (more info coming.)
+1, HX711 weight sensor      https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf
+1, Blue Pill, STM32F103C8T6 https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html
+1, Esp-01s                  https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf
+****************************************************************************************
 1 - firmware <first step to take with stm32f1>.
-
 2 - Idé or worth to make it in software.
-
 3 - main <start from main read from 4-startup ?>
 
 "/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
-first check first cmd line "sudo nano /boot/cmdline.txt"
-
-remove this "console=serial0,115200" /dont foreget to reboot\
+first check first cmd line "sudo nano /boot/cmdline.txt" then remove this "console=serial0,115200" /dont foreget to reboot after all tools are done\
 
 if flash STM32F103C8T6 start here.
 
