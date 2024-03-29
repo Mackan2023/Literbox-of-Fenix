@@ -47,16 +47,16 @@ sudo make install <,> cd ../
 
 git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot
 
-"burn in file over RX&TX" = stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
+burn in file over RX&TX = stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
 
-"erase firmware" = stm32flash -o /dev/serial0
+erase firmware = stm32flash -o /dev/serial0
 
 "/////////////////////////EPS PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
 
 if use ESP-01s (ESP8266EX) on raspberrypi os with programer
 
-"isntall tool" = sudo pip install esptool
+isntall tool = sudo pip install esptool
 
-"Burn bin file to usbx, in this cas 0" = esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/filename.bin
+Burn bin file to usbx, in this cas 0 = esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/filename.bin
 
-"erase firmware" = esptool.py --port /dev/ttyUSB0 erase_flash
+erase firmware = esptool.py --port /dev/ttyUSB0 erase_flash
