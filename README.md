@@ -9,7 +9,7 @@
     <div>&nbsp;</div>
 </div>
 <div style="background-color:#1f272a;color:#dae3e3;font-family:Consolas, 'Courier New', monospace;font-size:14px;font-weight:normal;line-height:19px;white-space:pre;">
-    <div><span style="color:#dae3e3;">it is a self-cleaning litter box for cats, </span><a target="_blank" rel="noopener noreferrer" href="https://github.com/Mackan2023/Literbox-of-Fenix/doc/"><span style="color:#dae3e3;">https://github.com/Mackan2023/Literbox-of-Fenix/doc/</span></a></div>
+    <div><span style="color:#dae3e3;">it is a self-cleaning litter box for cats, </span><a target="_blank" rel="noopener noreferrer" href="https://github.com/Mackan2023/Literbox-of-Fenix/doc/"><span style="color:#dae3e3;">Literbox-of-Fenix/doc/</span></a></div>
     <div>&nbsp;</div>
 </div>
 <div style="background-color:#1f272a;color:#dae3e3;font-family:Consolas, 'Courier New', monospace;font-size:14px;font-weight:normal;line-height:19px;white-space:pre;">
@@ -19,7 +19,8 @@
 </div>
 <div style="background-color:#1f272a;color:#dae3e3;font-family:Consolas, 'Courier New', monospace;font-size:14px;font-weight:normal;line-height:19px;white-space:pre;">
     <div><span style="color:#7fcbcd;">2</span><span style="color:#dae3e3;">, stepper </span><span style="color:#f39c12;">motor</span><span style="color:#dae3e3;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(mor info coming)</span></div>
-    <div><span style="color:#7fcbcd;">1</span><span style="color:#dae3e3;">, stepper motor driver &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;https:</span><span style="color:#7f8c8d;">//www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf</span></div>
+    <div><span style="color:#7fcbcd;">1</span><span style="color:#dae3e3;">, stepper motor driver &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf"<span style="color:#7f8c8d;">a4988 microstepping driver</span></a></div>
     <div><span style="color:#7fcbcd;">1</span><span style="color:#dae3e3;">, (</span><span style="color:#7fcbcd;">2</span><span style="color:#dae3e3;">), optical </span><span style="color:#f39c12;">reader</span><span style="color:#dae3e3;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (more info coming.)</span></div>
     <div><span style="color:#7fcbcd;">1</span><span style="color:#dae3e3;">, HX711 weight sensor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; https:</span><span style="color:#7f8c8d;">//cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf</span></div>
     <div><span style="color:#7fcbcd;">1</span><span style="color:#dae3e3;">, Blue Pill, STM32F103C8T6 &nbsp; &nbsp;https:</span><span style="color:#7f8c8d;">//stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html</span></div>
