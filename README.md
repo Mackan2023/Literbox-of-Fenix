@@ -36,27 +36,31 @@ I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 
 "/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
 check first cmd line
+sudo nano /boot/cmdline.txt
+remove this "console=serial0,115200"
 
-sudo nano /boot/cmdline.txt <-------remove this "console=serial0,115200"
+if use STM32F103C8T6
 
-if use STM32F103C8T6 "install tool" = cd /tmp <,> git clone https://git.code.sf.net/p/stm32flash/code stm/u
+"install tool"
+cd /tmp
+git clone https://git.code.sf.net/p/stm32flash/code stm/u (soon here)
+cd stm/u
+make
+sudo make install
+cd ../
+git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot (no need for it but save and sorry)
+"no need for this burn in file over RX&TX" stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
 
-cd stm/u <,> make
-
-sudo make install <,> cd ../
-
-git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot
-
-burn in file over RX&TX = stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
-
-erase firmware = stm32flash -o /dev/serial0
+"erase firmware" stm32flash -o /dev/serial0
 
 "/////////////////////////EPS PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
 
+https://cdn.sparkfun.com/datasheets/Wireless/WiFi/ESP8266ModuleV1.pdf
+
 if use ESP-01s (ESP8266EX) on raspberrypi os with programer
 
-isntall tool = sudo pip install esptool
+"install tool" sudo pip install esptool
 
-Burn bin file to usbx, in this cas 0 = esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/filename.bin
+"Burn bin file to usbx" esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin
 
-erase firmware = esptool.py --port /dev/ttyUSB0 erase_flash
+"erase firmware" esptool.py --port /dev/ttyUSB0 erase_flash
