@@ -1,34 +1,33 @@
-# Literbox Fenix
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Din snygga text</title>
+  <!-- eventuella stilmallar kan läggas till här -->
+  <style>
+    /* Här kan du lägga till CSS för att styla din text */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
 
-Hey, I have an idea, if you like to "bug" with, well, go head. I'm totally new to programming/electrical/etc., I'm no one.
-I will need a lot of help if you are interested in helping me? you are welcome to help. I have no idea what I'm doing here or what is what but I have an idea that I really like to do.
+<h1>Din rubrik här</h1>
+<p>Din text här.</p>
+<p>Mer text här.</p>
 
-It is a self-cleaning litter box for cats, [Literbox-of-Fenix-doc](https://github.com/Mackan2023/Literbox-of-Fenix/doc/).
-
-It should be fun to do something I'm not good at :)
-About me: I'm not an electrician/programmer/etc., sometimes it's hard to understand.
-
-## Components:
-- 2, stepper motor *(more info coming)*
-- 1, [stepper motor driver A4988](https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf)
-- 1, (2), optical reader *(more info coming)*
-- 1, [HX711 weight sensor](https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf)
-- 1, [Blue Pill, STM32F103C8T6](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html)
-- 1, [Esp-01s](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
-
----
-
-1. Firmware `<first step to take with stm32f1>`.
-2. Idé or worth to make it in software.
-3. Main `<start from main read from 4-startup ?>`.
-
-### Raspberry as PROGRAMMER
-- First check first cmd line `sudo nano /boot/cmdline.txt`, then remove this `"console=serial0,115200"`.
-- Don't forget to reboot after all tools are done.
-- Install flashtool:
-  ```sh
-  git clone https://git.code.sf.net/p/stm32flash/code stm/u (soon new adress here)
-
-EPS PROGRAMMER USB
-If use ESP-01s (ESP8266EX) on raspberrypi os with programmer:
-Install tool: sudo pip install esptool
+</body>
+</html>
