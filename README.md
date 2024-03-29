@@ -30,9 +30,9 @@
 <a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">Datasheet</a></li>
 </ul>
 <ol>
-    <li>firmware ? <first step to take with stm32f1>..</li>
-    <li>Idé or worth to make it in software.?</li>
-    <li>main <start from main read from 4-startup ?></li>
+    <li>firmware ? (first step to take with stm32f1)..</li>
+    <li>Idé or worth to make it (in software.)?</li>
+    <li>main all start from main (read from 4-startup) ?></li>
 </ol>
 <hr>
 <p>/////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
