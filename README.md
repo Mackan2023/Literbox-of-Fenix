@@ -42,13 +42,21 @@ remove this "console=serial0,115200"
 if use STM32F103C8T6
 
 "install tool"
+
 cd /tmp
+
 git clone https://git.code.sf.net/p/stm32flash/code stm/u (soon here)
+
 cd stm/u
+
 make
+
 sudo make install
+
 cd ../
+
 git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot (no need for it but save and sorry)
+
 "no need for this burn in file over RX&TX" stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
 
 "erase firmware" stm32flash -o /dev/serial0
