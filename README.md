@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>literbox Fenix</title>
 </head>
 <body>
 
@@ -35,41 +34,24 @@
     <li>Main &lt;start from main read from 4-startup ?&gt;</li>
 </ol>
 
-<p>"/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+<p>/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     First, check the first command line by entering "sudo nano /boot/cmdline.txt" then remove "console=serial0,115200". Don't forget to reboot after all tools are installed.<br>
     If you're flashing STM32F103C8T6, start here.</p>
 
-<p>Install flashtool:</p>
-
-<code>
-git clone https://git.code.sf.net/p/stm32flash/code stm/u (soon new address here)<br>
-cd stm/u<br>
-make<br>
-sudo make install<br>
-cd ../
-</code>
-
-<p>This is not necessary but use unsafe working bootloader, go ahead.</p>
-
-<code>
-git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot<br>
-Check if you have connected STM to the right port on Raspberry Pi by using "/dev/serial0" command, 0 if it's connected there<br>
-"burn in file over RX&TX" stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0<br>
-"erase firmware" stm32flash -o /dev/serial0<br>
-</code>
-
-<p>"/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
+<p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps.</p>
 
-<p>Install tool:</p>
-
-<code>
-sudo pip install esptool<br>
+<p>Highlight should be removed from this text:<br>
+Check if you have connected STM to the right port on Raspberry Pi by using<br>
+"burn in file over RX&TX"<br>
+"erase firmware"<br>
 Burn bin file to usb0 if it's usb0 (dev/usb* command)<br>
-esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin<br>
-Erase firmware<br>
-esptool.py --port /dev/ttyUSB0 erase_flash<br>
-</code>
+Erase firmware</p>
+
+<p>And the text is incorrect:<br>
+Burn bin file to usb0 if it's usb0 (dev/usb* command)<br>
+It should be:<br>
+Burn bin file to usb0 if it's usb0 (dev/ttyUSB* command)</p>
 
 </body>
 </html>
