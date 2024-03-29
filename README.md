@@ -1,10 +1,10 @@
 <html>
 <a># literbox Fenix</a>
 
-<a>Hey, I have an idea, if you like to "bug" with, well, go head.
+Hey, I have an idea, if you like to "bug" with, well, go head.
 I'm totally new to programming/electrical/ect, I'm no one.
 I will need a lot of help if you are interested in helping me? you are welcome to help.
-I have no idea what I'm doing here or what is what but I have an idea that I really like to do.</a>
+I have no idea what I'm doing here or what is what but I have an idea that I really like to do.
 
 it is a self-cleaning litter box for cats, https://github.com/Mackan2023/Literbox-of-Fenix/doc/
 
