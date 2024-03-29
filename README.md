@@ -2,7 +2,6 @@
     <div><span style="color:#dae3e3;"># literbox Fenix</span></div>
     <div>&nbsp;</div>
 </div>
-<div style="background-color:#1f272a;color:#dae3e3;font-family:Consolas, 'Courier New', monospace;font-size:14px;font-weight:normal;line-height:19px;white-space:pre;">
     <div>
       <span style="color:#dae3e3;">Hey, I have an idea, if you like to "bug" with, well, go head.</span>
       <span style="color:#f39c12;">I'm totally new to programming/electrical/ect, I'm no one.</span>
