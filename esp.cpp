@@ -218,4 +218,4 @@ void handleIndex() {
         Serial.println("Failed to open index.html file");
         server.send(404, "text/plain", "File Not Found");
     }
-}c 2024 Mackan Götgård
+}c Mackan2024@github
