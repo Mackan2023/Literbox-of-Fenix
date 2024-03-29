@@ -20,11 +20,38 @@ ESP8266HTTPUpdateServer httpUpdater;
 File fsUploadFile; // Filobjekt för att hantera uppladdning av filer
 SHA256 sha256; // Objekt för att beräkna SHA-256 hash
 
-// Variabel för att hålla reda på om uppdatering pågår
-bool updating = false;
+bool updating = false; // Variabel för att hålla reda på om uppdatering pågår
 
 void setup() {
     Serial.begin(115200);
+ void handleRoot() {
+    server.send(200, "text/plain", "Hello from ESP8266!");
+
+  void handleFileUpload() {
+    if (server.hasArg("file") && server.hasArg("hash")) {
+      HTTPUpload& upload = server.upload();
+      if (upload.status == UPLOAD_FILE_START) {
+      String expectedHash = server.arg("hash");
+      fsUploadFile = SPIFFS.open("/" + upload.filename, "w");
+      sha256.reset();
+    } else if (upload.status == UPLOAD_FILE_WRITE) {
+      if (fsUploadFile) {
+        fsUploadFile.write(upload.buf, upload.currentSize);
+        sha256.update(upload.buf, upload.currentSize);      }
+    } else if (upload.status == UPLOAD_FILE_END) {
+      fsUploadFile.close();
+      String calculatedHash = sha256.result();
+      if (calculatedHash == expectedHash) {
+        server.send(200, "text/plain", "File uploaded successfully and hash matches!");
+      } else {
+        SPIFFS.remove("/" + upload.filename);
+        server.send(500, "text/plain", "File upload failed or hash mismatch!");
+      }
+    }
+  } else {
+    server.send(400, "text/plain", "Bad Request");
+  }
+}
 
     //********** SPIFFS-initiering **********
     if (!SPIFFS.begin()) {
@@ -43,8 +70,8 @@ void setup() {
         digitalWrite(ledPin, LOW);      // Släck LED
         delay(250);                     // Vänta i 250 ms
         Serial.println("Connecting to WiFi...");
-        //#else
-        //Serial.println("No connection Found :(");
+			#else
+			Serial.println("No connection Found :(");
         //#endif
     }
     Serial.println("Connected :)");
@@ -106,7 +133,6 @@ void setup() {
         downloadAndSendBinFile("/esp.bin", "application/octet-stream", "esp.bin");
     });
     // Aktivera uppdateringar för ArduinoOTA, SPIFFS, och webbservern
-    ArduinoOTA.begin();
     SPIFFS.begin();
     server.begin();
     WiFi.begin(ssid, password);
@@ -125,21 +151,16 @@ void setup() {
 
 void loop() {
 
-    // Kontrollera om OTA-uppdatering pågår
-    if (ArduinoOTA.isRunning()) {
-        // Uppdatering pågår, tänd LED
-        digitalWrite(ledPin, HIGH);
-        updating = true; // Markera att uppdatering pågår
+    // Kontrollera om uppdatering pågår
+    if (update.isRunning()) {
+        
     } else {
-        // Inga uppdateringar pågår, släck LED om den tidigare var tänd
         if (updating) {
-            digitalWrite(ledPin, LOW);
-            updating = false; // Markera att uppdatering inte pågår längre
+
         }
     }
 
-    // Hantera OTA-uppdateringar
-    ArduinoOTA.handle();
+    // Hantera server
     server.handleClient();  // Hantera webbserverns klienter
 }
 
@@ -147,15 +168,18 @@ void loop() {
 void handleUpload(AsyncWebServerRequest* request) {
     // Kontrollera om det finns en fil att hantera
     if (request->hasParam("file", true) && request->hasParam("hash", true)) {
-        // Hämta filen och dess hash-värde från förfrågan
-        AsyncWebParameter* fileParam = request->getParam("file", true);
-        AsyncWebParameter* hashParam = request->getParam("hash", true);
+        digitalWrite(ledPin, HIGH);// Uppdatering pågår, tänd LED
+        hash = true; // Markera att hash pågår
+        AsyncWebParameter* fileParam = request->getParam("file", true);// Hämta filen och dess hash-värde från förfrågan
+        AsyncWebParameter* hashParam = request->getParam("hash", true);// Hämta filen och dess hash-värde från förfrågan// Hämta filen och dess hash-värde från förfrågan
         
         // Öppna filen för att skriva
         fsUploadFile = SPIFFS.open("/" + fileParam->value(), "w");
         if (!fsUploadFile) {
             Serial.println("Failed to open file for writing");
             request->send(500, "text/plain", "Internal Server Error");
+			digitalWrite(ledPin, LOW);// Inga uppdateringar pågår, släck LED om den tidigare var tänd
+            updating = false; // Markera att uppdatering inte pågår längre
             return;
         }
         
@@ -164,6 +188,9 @@ void handleUpload(AsyncWebServerRequest* request) {
     } else {
         // Felaktig förfrågan om fil och/eller hash saknas
         request->send(400, "text/plain", "Bad Request");
+			digitalerror(ledpin, blink 10 times)
+			digitalWrite(ledPin, LOW);// Inga uppdateringar pågår, släck LED om den tidigare var tänd
+            updating = false; // Markera att uppdatering inte pågår längre
     }
 }
 
@@ -191,5 +218,4 @@ void handleIndex() {
         Serial.println("Failed to open index.html file");
         server.send(404, "text/plain", "File Not Found");
     }
-}
-
+}c 2024 Mackan Götgård
