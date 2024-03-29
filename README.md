@@ -1,16 +1,14 @@
 # literbox Fenix
 
-Hey, I have an idea, if you like to "bug" with, well, go head.
-
-I'm totally new to programming/electrical/ect, I'm no one.
-
-I will need a lot of help if you are interested in helping me? you are welcome to help.
-
+Hey, I have an idea, if you like to "bug" with, well, go head. I'm totally new to programming/electrical/ect, I'm no one. 
+I will need a lot of help if you are interested in helping me? you are welcome to help. 
 I have no idea what I'm doing here or what is what but I have an idea that I really like to do.
 
 it is a self-cleaning litter box for cats,
 
-2 , stepper motor -> a driver   https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf
+2 , stepper motor -> a driver   https://github.com/Mackan2023/Literbox-of-Fenix/doc/
+
+https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf
 
 1, optical reader              
 
@@ -22,10 +20,7 @@ it is a self-cleaning litter box for cats,
 
 
 it should be fun to do something I'm not good at :)
-
-about me:
-
-I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
+about me: I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 
 
 1 - firmware <first step to take with stm32f1>.
@@ -35,17 +30,15 @@ I'm not an electrician/programmer/etc/ sometimes it's hard to understand.
 3 - main <start from main read from 4-startup ?>
 
 "/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
-check first cmd line
-sudo nano /boot/cmdline.txt
-remove this "console=serial0,115200"
+first check first cmd line "sudo nano /boot/cmdline.txt"
 
-if use STM32F103C8T6
+remove this "console=serial0,115200" /dont foreget to reboot\
 
-"install tool"
+if flash STM32F103C8T6 start here.
 
-cd /tmp
+"install flashtool"
 
-git clone https://git.code.sf.net/p/stm32flash/code stm/u (soon here)
+git clone https://git.code.sf.net/p/stm32flash/code stm/u (soon new adress here)
 
 cd stm/u
 
@@ -55,9 +48,13 @@ sudo make install
 
 cd ../
 
-git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot (no need for it but save and sorry)
+this is not needed but use unsafe working bootloader go a head
 
-"no need for this burn in file over RX&TX" stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
+git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot
+
+check if u have connected stm to right on pi by "/dev/serial0" command, 0 if its connected there
+
+"burn in file over RX&TX" stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0
 
 "erase firmware" stm32flash -o /dev/serial0
 
@@ -69,6 +66,6 @@ if use ESP-01s (ESP8266EX) on raspberrypi os with programer
 
 "install tool" sudo pip install esptool
 
-"Burn bin file to usbx" esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin
+"Burn bin file to usb0 if its usb0 (dev/usb* command)" esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin
 
 "erase firmware" esptool.py --port /dev/ttyUSB0 erase_flash
