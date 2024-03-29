@@ -34,17 +34,18 @@
     <li>Main &lt;start from main read from 4-startup ?&gt;</li>
 </ol>
 
-<p>/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    First, check the first command line by entering "sudo nano /boot/cmdline.txt" then remove "console=serial0,115200". Don't forget to reboot after all tools are installed.<br>
+<p>/////////////////////////Raspberry as PROGRAMMER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
+    First, check the first command line by entering<br>
+    <code>"sudo nano /boot/cmdline.txt"</code> then remove "console=serial0,115200". Don't forget to reboot after all tools are installed.<br>
     If you're flashing STM32F103C8T6, start here.</p>
 
-<p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+<p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
     If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:</p>
 
 <ul>
     Install tool: <li><code>sudo pip install esptool</code></li>
     Burn bin file to usb0 if it's usb0 (dev/ttyUSB* command): <li><code>esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin</code></li>
-    Erase firmware: <li><code>esptool.py --port /dev/ttyUSB0 erase_flash</code></li>
+    Erase firmware: <code>esptool.py --port /dev/ttyUSB0 erase_flash</code>
 </ul>
 
 </body>
