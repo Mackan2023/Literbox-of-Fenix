@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Din snygga text</title>
-  <!-- eventuella stilmallar kan läggas till här -->
   <style>
     /* Här kan du lägga till CSS för att styla din text */
     body {
