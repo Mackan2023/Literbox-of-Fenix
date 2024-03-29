@@ -4,13 +4,12 @@ Hey, I have an idea, if you like to "bug" with, well, go head. I'm totally new t
 I will need a lot of help if you are interested in helping me? you are welcome to help. 
 I have no idea what I'm doing here or what is what but I have an idea that I really like to do.
 
-it is a self-cleaning litter box for cats,
+it is a self-cleaning litter box for cats, https://github.com/Mackan2023/Literbox-of-Fenix/doc/
 
-2 , stepper motor -> a driver   https://github.com/Mackan2023/Literbox-of-Fenix/doc/
-
+2, stepper motor -> one driver (mor info coming)
 https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf
 
-1, optical reader              
+1, optical reader              (more info coming.
 
 1(2), HX711 weight sensor      https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf
 
