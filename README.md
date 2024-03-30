@@ -38,6 +38,7 @@ About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understa
 First, check the first command line by entering<br>
 <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
 Don't forget to <code>reboot</code>after all tools are installed.
+
 /////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
 <ul>
 If you're flashing STM32F103C8T6<br>
