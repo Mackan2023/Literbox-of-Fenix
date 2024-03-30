@@ -41,7 +41,7 @@ First, check the first command line by entering<br>
 Don't forget to <code>reboot</code>after all tools are installed.
 <hr>
 /////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-<ul>
+
 If you're flashing STM32F103C8T6<br>
 install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)<br>
 <code>cd stm/u<br>
