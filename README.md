@@ -56,7 +56,7 @@ burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/g
 
 erase firmware <code>stm32flash -o /dev/serial0</code>
 <hr>
-<p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</p><br>
+<p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</p>
     If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:<br>
     Install tool: <code>sudo pip install esptool</code><br>
     Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
