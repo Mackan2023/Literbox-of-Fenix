@@ -34,15 +34,13 @@ About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understa
     <li>Idé or worth to make it (in software.)?</li>
     <li>main all start from main (read from 4-startup) ?</li>
 </ol>
-<hr>
+<hr><ul>
 /////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
-<ul>
 First, check the first command line by entering<br>
 <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
 Don't forget to <code>reboot</code>after all tools are installed.</ul>
-<hr>
+<hr><ul>
 /////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-<ul>
 If you're flashing STM32F103C8T6<br>
 install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)<br>
 <code>cd stm/u<br>
@@ -56,9 +54,8 @@ check if u have connected stm to right pins, <code>/dev/serial0</code> command, 
 burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0</code>
 
 erase firmware <code>stm32flash -o /dev/serial0</code>
-</ul><hr>
+</ul><hr><ul>
 /////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-<ul>
 If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:<br>
 Install tool: <code>sudo pip install esptool</code><br>
 Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
