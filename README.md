@@ -34,7 +34,7 @@ About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understa
     <li>Idé or worth to make it (in software.)?</li>
     <li>main all start from main (read from 4-startup) ?</li>
 </ol>
-<hr><ul>
+<ul><hr>
 /////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
 First, check the first command line by entering<br>
 <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
