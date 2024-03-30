@@ -35,13 +35,13 @@ About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understa
     <li>main all start from main (read from 4-startup) ?</li>
 </ol>
 <hr><ul><!--Raspberry-->
-<h1>Raspberry as PROGRAMMER/STM connected</h1><br>
+<h1>Raspberry as PROGRAMMER</h1><br>
 First, check the first command line by entering<br>
 <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
 Don't forget to <code>reboot</code>after all tools are installed.</ul>
 <hr><ul>
 <!--STM32F103C8T6-->
-<h1>If you're flashing STM32F103C8T6</h1><br><br>
+<h1>Flashing STM32F103C8T6</h1><br><br>
 install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)<br>
 <code>cd stm/u<br>
 make<br>
@@ -56,7 +56,7 @@ burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/g
 erase firmware <code>stm32flash -o /dev/serial0</code>
 </ul><hr><ul>
 <!--ESP-->
-<h1>ESP PROGRAMMER USB</h1><br>
+<h1>ESP programer on a USB</h1><br>
 If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:<br>
 Install tool: <code>sudo pip install esptool</code><br>
 Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
