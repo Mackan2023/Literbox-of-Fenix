@@ -41,7 +41,7 @@
     Don't forget to <code>reboot</code>after all tools are installed.<br>
 <hr>
 <p>/////////////////////////STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-    If you're flashing STM32F103C8T6, start here.</p><br>
+    If you're flashing STM32F103C8T6, start here.<br><br>
     install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)
 <code>cd stm/u<br>
 make<br>
