@@ -41,7 +41,6 @@ First, check the first command line by entering<br>
 Don't forget to <code>reboot</code>after all tools are installed.
 <hr>
 /////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-
 If you're flashing STM32F103C8T6<br>
 install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)<br>
 <code>cd stm/u<br>
@@ -56,7 +55,7 @@ burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/g
 
 erase firmware <code>stm32flash -o /dev/serial0</code>
 <hr>
-/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
+/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
 If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:<br>
 Install tool: <code>sudo pip install esptool</code><br>
 Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
