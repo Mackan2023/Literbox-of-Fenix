@@ -34,20 +34,20 @@ About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understa
     <li>Idé or worth to make it (in software.)?</li>
     <li>main all start from main (read from 4-startup) ?</li>
 </ol>
-<hr>
-<p>/////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
+<p><hr>
+/////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
     First, check the first command line by entering<br>
     <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
     Don't forget to <code>reboot</code>after all tools are installed.
 <hr>
-<p>/////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
- <ul>
+/////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
+<ul>
     If you're flashing STM32F103C8T6<br>
     install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)<br>
-     <code>cd stm/u<br>
-     make<br>
-     sudo make install<br>
-     cd ../</code><br>
+    <code>cd stm/u<br>
+    make<br>
+    sudo make install<br>
+    cd ../</code><br>
 
 this is not needed but use unsafe working bootloader go a head<br>
 <code>git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot</code><br>
@@ -57,7 +57,7 @@ burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/g
 erase firmware <code>stm32flash -o /dev/serial0</code>
 <hr>
 /////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
- <p>If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:<br>
+    If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:<br>
     Install tool: <code>sudo pip install esptool</code><br>
     Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
     <code>esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin</code><br>
