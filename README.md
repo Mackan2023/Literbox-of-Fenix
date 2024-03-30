@@ -11,12 +11,12 @@
 <p> Hey, I have an idea, if you like to "bug" with, well, go head.<br>
     I'm totally new to programming/electrical/ect, I'm no one.<br>
     I will need a lot of help if you are interested in helping me? you are welcome to help.<br>
-    I have no idea what I'm doing here or what is what but I have an idea that I really like to do.<br>
+    I have no idea what I'm doing here or what is what but I have an idea that I really like to do.
 
 <p>It is a self-cleaning litter box for cats, <a href="https://github.com/Mackan2023/Literbox-of-Fenix/doc/">Literbox-of-Fenix</a>.</p>
 
 <p>It should be fun to do something I'm not good at :)<br>
-    About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understand.</p>
+About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understand.</p>
 <ul>
     <li>2, stepper motor (more info coming)</li>
     <li>1, stepper motor driver 
@@ -37,33 +37,34 @@
 <hr>
 <p>/////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
     First, check the first command line by entering<br>
-    <code>"sudo nano /boot/cmdline.txt"</code> then remove <code>console=serial0,115200</code>.<br>
-    Don't forget to <code>reboot</code>after all tools are installed.<br>
+    <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
+    Don't forget to <code>reboot</code>after all tools are installed.
 <hr>
-<p>/////////////////////////STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-    If you're flashing STM32F103C8T6, start here.<br><br>
-    install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)
-<code>cd stm/u<br>
-make<br>
-sudo make install</code><br>
-cd ../</code><br>
+<p>/////////////////////////start here STM32F103C8T6\\\\\\\\\\\\\\\\\\\\\\\\\<br>
+ <ul>
+    If you're flashing STM32F103C8T6<br>
+    install flashtool <code>git clone https://git.code.sf.net/p/stm32flash/code stm/u</code> (soon new adress here)<br>
+     <code>cd stm/u<br>
+     make<br>
+     sudo make install<br>
+     cd ../</code><br>
 
 this is not needed but use unsafe working bootloader go a head<br>
 <code>git clone https://github.com/rogerclarkmelbourne/STM32duino-bootloader boot</code><br>
-check if u have connected stm to right on pi by <code>/dev/serial0</code> command, 0 if its connected there<br>
-burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0</code><br>
+check if u have connected stm to right pins, <code>/dev/serial0</code> command, 0 if its connected there<br>
+burn in file over RX&TX <code>stm32flash -v -w ./boot/bootloader_only_binaries/generic_boot20_pc13.bin /dev/serial0</code>
 
-erase firmware <code>stm32flash -o /dev/serial0</code><br>
+erase firmware <code>stm32flash -o /dev/serial0</code>
 <hr>
 <p>/////////////////////////ESP PROGRAMMER USB\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\<br>
-If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:</p>
+    If you're using ESP-01s (ESP8266EX) on Raspberry Pi OS with a programmer, follow these steps:</p>
 <ul>
-Install tool: <code>sudo pip install esptool</code><br>
+    Install tool: <code>sudo pip install esptool</code><br>
     
-Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
-<code>esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin</code><br>
+    Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
+    <code>esptool.py --port /dev/ttyUSB0 write_flash 0 ftp/thebinfile.bin</code><br>
     
-Erase firmware: <code>esptool.py --port /dev/ttyUSB0 erase_flash</code>
+    Erase firmware: <code>esptool.py --port /dev/ttyUSB0 erase_flash</code>
 </ul>
 
 </body>
