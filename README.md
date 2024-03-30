@@ -33,7 +33,8 @@ About me: I'm not an electrician/programmer/etc. Sometimes it's hard to understa
     <li>firmware ? (first step to take with stm32f1)..</li>
     <li>Idé or worth to make it (in software.)?</li>
     <li>main all start from main (read from 4-startup) ?</li>
-</ol><p><hr>
+</ol>
+<hr>
 /////////////////////////Raspberry as PROGRAMMER/STM connected\\\\\\\\\\\\<br>
 First, check the first command line by entering<br>
 <code>sudo nano /boot/cmdline.txt</code> then remove <code>console=serial0,115200</code>.<br>
