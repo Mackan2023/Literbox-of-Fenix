@@ -65,4 +65,4 @@ Burn bin file to usb <code>dev/ttyUSB*</code> (are command to check usb):<br>
 Erase firmware: <code>esptool.py --port /dev/ttyUSB0 erase_flash</code></p></ul>
 
 </body></html>
-Mackan2024Cgithub
+Mackan2024(C)github
