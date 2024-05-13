@@ -8,4 +8,4 @@ void setupHX711() {
 
 float readScale() {
     return scale.get_units();
-}
+}mackan(C)github
