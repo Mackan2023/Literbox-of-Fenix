@@ -102,4 +102,4 @@ static void MX_USART1_UART_Init(void) {
     if (HAL_UART_Init(&huart1) != HAL_OK) {
         Error_Handler();
     }
-}c Mackan2024@github
+} Mackan2024(C)github
