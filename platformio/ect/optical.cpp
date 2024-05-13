@@ -5,3 +5,4 @@ int readOptical() {
     int reading = /* ... */
     return reading;
 }
+mackan(C)github
