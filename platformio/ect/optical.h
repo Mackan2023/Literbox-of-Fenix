@@ -4,3 +4,4 @@
 int readOptical();
 
 #endif // OPTICAL_READER_H
+mackan(C)github
