@@ -126,4 +126,4 @@ void sendCommand(String command, int timeout, bool debug) {
       Serial.print(c);
     }
   }
-}
+}mackan(C)github
