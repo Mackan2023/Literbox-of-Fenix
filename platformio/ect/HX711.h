@@ -9,3 +9,4 @@ void setupHX711();
 float readScale();
 
 #endif // HX711_H
+mackan(C)github
